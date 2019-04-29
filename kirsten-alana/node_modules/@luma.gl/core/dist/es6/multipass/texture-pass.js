@@ -1,0 +1,33 @@
+import { default as ClipSpace } from '../lib/clip-space';
+import Pass from './pass';
+const fs = "uniform sampler2D uDiffuseSampler;\nuniform float uOpacity;\nvarying vec2 uv;\n\nvoid main() {\n  vec4 texel = texture2D(uDiffuseSampler, uv);\n  gl_FragColor = uOpacity * texel;\n}\n";
+export default class TexturePass extends Pass {
+  constructor(gl) {
+    let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    super(gl, Object.assign({
+      id: 'texture-pass'
+    }, options));
+    const texture = options.texture,
+          _options$opacity = options.opacity,
+          opacity = _options$opacity === void 0 ? 1.0 : _options$opacity;
+    this.clipspace = new ClipSpace(gl, {
+      id: 'texture-pass',
+      fs,
+      uniforms: {
+        uDiffuseSampler: texture,
+        uOpacity: opacity
+      }
+    });
+  }
+
+  _renderPass() {
+    this.clipspace.draw({
+      parameters: {
+        depthWrite: false,
+        depthTest: false
+      }
+    });
+  }
+
+}
+//# sourceMappingURL=texture-pass.js.map
