@@ -97,8 +97,8 @@ function setTooltip(object, x, y) {
       console.log("a", object.object.name)
     el.innerHTML = object.name;
     el.style.display = 'block';
-    el.style.left = x + 'px';
-    el.style.top = y + 'px';
+    // el.style.left = x + 'px';
+    // el.style.top = y + 'px';
   } else {
     el.style.display = 'none';
   }
