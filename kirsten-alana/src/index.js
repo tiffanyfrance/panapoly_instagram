@@ -5,8 +5,8 @@ import logo from './logo.png';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<div><App /><div id="tooltip">
-  <h1><img src={logo} alt="instagram logo"/>Kirsten Alana Instagram Stories</h1>
+ReactDOM.render(<div><App /><div id="tooltip" style={{display: 'none'}}>
+  <h1><img src={logo} alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
   <h2>Seljalandsfoss</h2>
   <p>long, lat: -19.992394645985, 63.615887707572</p>
   <p>
@@ -15,10 +15,10 @@ ReactDOM.render(<div><App /><div id="tooltip">
   <p><a href="https://www.instagram.com/p/3heCbxFyZ9/" target="_blank" rel="noopener noreferrer">see more...</a></p>
   <svg xmlns="http://www.w3.org/2000/svg" version="1">
     <defs>
-        <linearGradient id="e" x1="0" y1="10" x2="460" y2="10" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#C8AE6E" offset="0" />
-            <stop stopColor="#F11C00" offset="1" />
-        </linearGradient>
+      <linearGradient id="e" x1="0" y1="10" x2="460" y2="10" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#C8AE6E" offset="0" />
+        <stop stopColor="#F11C00" offset="1" />
+      </linearGradient>
     </defs>
     <line x1="30" y1="30" x2="375" y2="30" stroke="url(#e)" strokeWidth="8" />
     <line x1="260" y1="18" x2="260" y2="42" stroke="#000" strokeWidth="1" />
