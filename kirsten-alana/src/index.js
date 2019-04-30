@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(<div><App /><div id="tooltip">
   <h1><img src={logo} alt="instagram logo"/>Kirsten Alana Instagram Stories</h1>
   <h2>Seljalandsfoss</h2>
-  <h3>long, lat: -19.992394645985, 63.615887707572</h3>
+  <p>long, lat: -19.992394645985, 63.615887707572</p>
   <p>
     We set off early from Reyjkavik, deciding the landscapes called to us more than the city itself (and also knowing we'll be back in town at the end of this adventure anyway). The Ring Road didn't disappoint on day one; from 10 minutes outside the city till the minute we quit after 9 PM in Vik, and even with intermittent rain and gray storm clouds -- it turns out all we've seen and heard about how beautiful Iceland is, is indeed 100% true. This is the oft-photographed Seljalandsfoss Waterfall. 📷
   </p>
@@ -20,7 +20,7 @@ ReactDOM.render(<div><App /><div id="tooltip">
             <stop stopColor="#F11C00" offset="1" />
         </linearGradient>
     </defs>
-    <line x1="30" y1="30" x2="375" y2="30" stroke="url(#e)" strokeWidth="10" />
+    <line x1="30" y1="30" x2="375" y2="30" stroke="url(#e)" strokeWidth="8" />
     <line x1="260" y1="18" x2="260" y2="42" stroke="#000" strokeWidth="1" />
     <text y="10" x="260" textAnchor="middle">2,000 likes</text>
   </svg>

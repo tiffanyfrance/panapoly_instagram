@@ -31,7 +31,14 @@ code {
   width: 400px;
   right: 0;
   top: 0;
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+@media (max-width: 500px) {
+  #tooltip {
+    width: calc(100% - 40px);
+    opacity: 1;
+  }
 }
 
 #tooltip h1 img {
