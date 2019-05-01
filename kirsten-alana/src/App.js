@@ -1,9 +1,10 @@
 import React from 'react';
 import DeckGL from '@deck.gl/react';
-import {IconLayer} from '@deck.gl/layers';
-import {StaticMap} from 'react-map-gl';
-import {isWebGL2} from '@luma.gl/core';
-import moment from 'moment'
+import { IconLayer } from '@deck.gl/layers';
+import { StaticMap } from 'react-map-gl';
+import { isWebGL2 } from '@luma.gl/core';
+import moment from 'moment';
+import $ from "jquery";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Set your mapbox access token here
@@ -25,13 +26,13 @@ const INITIAL_VIEW_STATE = {
 };
 
 const ICON_MAPPING = {
-  marker: {x: 0, y: 0, width: 15, height: 15}
+  marker: { x: 0, y: 0, width: 15, height: 15 }
 };
 
 class App extends React.Component {
   _renderLayers() {
-    const {data = DATA_URL} = this.props;
-    
+    const { data = DATA_URL } = this.props;
+
     return [
       new IconLayer({
         id: 'grid',
@@ -58,7 +59,7 @@ class App extends React.Component {
   }
 
   render() {
-    const {viewState, controller = true, baseMap = true} = this.props;
+    const { viewState, controller = true, baseMap = true } = this.props;
 
     return (
       <DeckGL
@@ -82,35 +83,22 @@ class App extends React.Component {
 }
 
 function setTooltip(info, x, y) {
-  const el = document.getElementById('tooltip');
-
   if (info && info.object) {
     let d = info.object;
 
     let x = 30 + ((d.likes_count / 8000) * 345);
 
-    el.innerHTML = 
-    `
-      <h1><img src="logo.png" alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
-      <h2>${d.name}</h2>
-      <p>${moment(d.created_time, "YYYY-MM-DD HH:mm:ss").format("MMMM D, YYYY")}</p>
-      <p>long, lat: ${d.latitude}, ${d.longitude}</p>
-      <p>${d.text}...</p>
-      <p><a href="${d.link}" target="_blank" rel="noopener noreferrer">see more...</a></p>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1">
-        <defs>
-          <linearGradient id="e" x1="0" y1="10" x2="460" y2="10" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#C8AE6E" offset="0" />
-            <stop stopColor="#F11C00" offset="1" />
-          </linearGradient>
-        </defs>
-        <line x1="30" y1="30" x2="375" y2="30" stroke="url(#e)" strokeWidth="8" />
-        <line x1="${x}" y1="18" x2="${x}" y2="42" stroke="#000" strokeWidth="1" />
-        <text y="10" x="${x}" textAnchor="middle">${d.likes_count} likes</text>
-      </svg>
-      <img src="${d.url}" alt="featured image" />
-    `;
-    el.style.display = 'block';
+    $('#tooltip h2').html(d.name);
+    $('#tooltip #date').html(moment(d.created_time, "YYYY-MM-DD HH:mm:ss").format("MMMM D, YYYY"));
+    $('#tooltip #location').html(`long, lat: ${d.latitude}, ${d.longitude}`);
+    $('#tooltip #text').html(d.text);
+    $('#tooltip #see-more').attr('href', d.link);
+    $('#tooltip #avengers').attr('src', d.url);
+    $('#tooltip svg #vert-line').attr('x1', x);
+    $('#tooltip svg #vert-line').attr('x2', x);
+    $('#tooltip svg text').html(`${d.likes_count} likes`);
+    $('#tooltip svg text').attr('x', x);
+    $('#tooltip').show();
   }
 }
 
