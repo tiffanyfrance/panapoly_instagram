@@ -95,7 +95,7 @@ function setTooltip(info, x, y) {
       <h2>${d.name}</h2>
       <p>${moment(d.created_time, "YYYY-MM-DD HH:mm:ss").format("MMMM D, YYYY")}</p>
       <p>long, lat: ${d.latitude}, ${d.longitude}</p>
-      <p>${d.text}</p>
+      <p>${d.text}...</p>
       <p><a href="${d.link}" target="_blank" rel="noopener noreferrer">see more...</a></p>
       <svg xmlns="http://www.w3.org/2000/svg" version="1">
         <defs>
