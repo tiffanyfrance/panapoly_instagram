@@ -72,7 +72,9 @@ code {
 #tooltip svg {
   height: 50px;
   width: 100%;
+  margin-top: 15px;
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 #tooltip svg text {

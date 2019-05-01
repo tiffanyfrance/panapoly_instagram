@@ -98,10 +98,10 @@ function setTooltip(info, x, y) {
 
     $('#tooltip h2').html(d.name);
     $('#tooltip #date').html(moment(d.created_time, "YYYY-MM-DD HH:mm:ss").format("MMMM D, YYYY"));
-    $('#tooltip #location').html(`long, lat: ${d.latitude}, ${d.longitude}`);
+    // $('#tooltip #location').html(`long, lat: ${d.latitude}, ${d.longitude}`);
     $('#tooltip #text').html(d.text);
-    $('#tooltip #see-more').attr('href', d.link);
-    $('#tooltip #avengers').attr('src', d.url);
+    $('#tooltip #see-more').html(`<a id="see-more" href="${d.link}" target="_blank" rel="noopener noreferrer">see more...</a>`);
+    $('#tooltip #image-holder').html(`<img src="${d.url}" alt="featured image" />`);
     $('#tooltip svg #vert-line').attr('x1', x);
     $('#tooltip svg #vert-line').attr('x2', x);
     $('#tooltip svg text').html(`${d.likes_count} likes`);
