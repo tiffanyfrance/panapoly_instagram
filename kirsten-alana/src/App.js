@@ -3,6 +3,7 @@ import DeckGL from '@deck.gl/react';
 import {IconLayer} from '@deck.gl/layers';
 import {StaticMap} from 'react-map-gl';
 import {isWebGL2} from '@luma.gl/core';
+import moment from 'moment'
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Set your mapbox access token here
@@ -92,10 +93,9 @@ function setTooltip(info, x, y) {
     `
       <h1><img src="logo.png" alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
       <h2>${d.name}</h2>
+      <p>${moment(d.created_time, "YYYY-MM-DD HH:mm:ss").format("MMMM D, YYYY")}</p>
       <p>long, lat: ${d.latitude}, ${d.longitude}</p>
-      <p>
-        We set off early from Reyjkavik, deciding the landscapes called to us more than the city itself (and also knowing we'll be back in town at the end of this adventure anyway). The Ring Road didn't disappoint on day one; from 10 minutes outside the city till the minute we quit after 9 PM in Vik, and even with intermittent rain and gray storm clouds -- it turns out all we've seen and heard about how beautiful Iceland is, is indeed 100% true. This is the oft-photographed Seljalandsfoss Waterfall. 📷
-      </p>
+      <p>${d.text}</p>
       <p><a href="${d.link}" target="_blank" rel="noopener noreferrer">see more...</a></p>
       <svg xmlns="http://www.w3.org/2000/svg" version="1">
         <defs>
