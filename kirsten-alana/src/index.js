@@ -5,13 +5,14 @@ import logo from './logo.png';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<div><App /><div id="tooltip" style={{display: 'none'}}>
+ReactDOM.render(<div><App /><div id="tooltip">
   <h1><img src={logo} alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
-  <h2>Seljalandsfoss</h2>
-  <p id="date"></p>
-  <p id="location">long, lat: -19.992394645985, 63.615887707572</p>
+  <h2>Data Vizualization by <a href="http://tiffanyfrance.com">Tiffany France</a></h2>
+  <p id="date">&nbsp;</p>
+  <p id="location"></p>
   <p id="text">
-    We set off early from Reyjkavik, deciding the landscapes called to us more than the city itself (and also knowing we'll be back in town at the end of this adventure anyway). The Ring Road didn't disappoint on day one; from 10 minutes outside the city till the minute we quit after 9 PM in Vik, and even with intermittent rain and gray storm clouds -- it turns out all we've seen and heard about how beautiful Iceland is, is indeed 100% true. This is the oft-photographed Seljalandsfoss Waterfall. 📷
+    This page shows instagram posts using longitude and latitude for Kirsten Alana's instagram account. <a href="https://www.instagram.com/kirstenalana/">Kirsten Alana</a> is a top travel influencer with the goal "to be a resource for those planning travel". 
+    <br /><br />The data is gathered using <a href="https://panoply.io/">Panoply</a>, a "fully end-to-end cloud data warehouse and management service."
   </p>
   <p><a id="see-more" href="https://www.instagram.com/p/3heCbxFyZ9/" target="_blank" rel="noopener noreferrer">see more...</a></p>
   <svg xmlns="http://www.w3.org/2000/svg" version="1">
@@ -22,8 +23,8 @@ ReactDOM.render(<div><App /><div id="tooltip" style={{display: 'none'}}>
       </linearGradient>
     </defs>
     <line x1="30" y1="30" x2="375" y2="30" stroke="url(#e)" strokeWidth="8" />
-    <line id="vert-line" x1="260" y1="18" x2="260" y2="42" stroke="#000" strokeWidth="1" />
-    <text y="10" x="260" textAnchor="middle">2,000 likes</text>
+    <line id="vert-line" x1="-202" y1="18" x2="-202" y2="42" stroke="#000" strokeWidth="1" />
+    <text y="10" x="202" textAnchor="middle">3,345,005 total likes</text>
   </svg>
   <img id="avengers" src="https://scontent.cdninstagram.com/vp/ab4d4e4140decc48a9f627c84e2086d1/5D1FE67B/t51.2885-15/e15/11386524_996213267068896_318014119_n.jpg?_nc_ht=scontent.cdninstagram.com" alt="featured image" />
 </div></div>, document.getElementById('root'));
