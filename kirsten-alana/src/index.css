@@ -34,10 +34,18 @@ code {
   opacity: 0.85;
 }
 
+#close {
+  display: none;
+}
+
 @media (max-width: 500px) {
   #tooltip {
     width: calc(100% - 40px);
     opacity: 1;
+  }
+
+  #close {
+    display: block;
   }
 }
 

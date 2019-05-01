@@ -6,6 +6,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<div><App /><div id="tooltip">
+  <a id="close" href=""><div style={{float: 'right', fontSize: '2em'}}>&#10005;</div></a>
   <h1><img src={logo} alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
   <h2>Data Vizualization by <a href="http://tiffanyfrance.com">Tiffany France</a></h2>
   <p id="date">&nbsp;</p>

@@ -30,6 +30,7 @@ const ICON_MAPPING = {
 };
 
 class App extends React.Component {
+
   _renderLayers() {
     const { data = DATA_URL } = this.props;
 
@@ -79,6 +80,13 @@ class App extends React.Component {
         )}
       </DeckGL>
     );
+  }
+
+  componentDidMount() {
+    $('#close').click(() => {
+      $('#tooltip').hide();
+      return false;
+    })
   }
 }
 
