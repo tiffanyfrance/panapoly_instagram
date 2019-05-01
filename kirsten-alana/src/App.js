@@ -23,31 +23,22 @@ const INITIAL_VIEW_STATE = {
   bearing: 0
 };
 
-const colorRange = [
-  // [255, 255, 178, 25],
-  [254, 217, 118, 85],
-  [254, 178, 76, 127],
-  [253, 141, 60, 170],
-  [240, 59, 32, 212],
-  [189, 0, 38, 255]
-];
-
 const ICON_MAPPING = {
-  marker: {x: 0, y: 0, width: 50, height: 50}
+  marker: {x: 0, y: 0, width: 15, height: 15}
 };
 
 class App extends React.Component {
   _renderLayers() {
-    const {data = DATA_URL, cellSize = 8, gpuAggregation = true, aggregation = 'Sum'} = this.props;
+    const {data = DATA_URL} = this.props;
     
     return [
       new IconLayer({
         id: 'grid',
         data,
-        iconAtlas: 'logo.png',
+        iconAtlas: 'square.png',
         iconMapping: ICON_MAPPING,
         getIcon: d => 'marker',
-        sizeScale: 5,
+        sizeScale: 2,
         getSize: d => 5,
         getPosition: d => [d.longitude, d.latitude],
         pickable: true,
