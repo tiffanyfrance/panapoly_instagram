@@ -95,6 +95,8 @@ function setTooltip(info, x, y) {
   if (info && info.object) {
     let d = info.object;
 
+    let x = 30 + ((d.likes_count / 8000) * 345);
+
     el.innerHTML = 
     `
       <h1><img src="logo.png" alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
@@ -112,8 +114,8 @@ function setTooltip(info, x, y) {
           </linearGradient>
         </defs>
         <line x1="30" y1="30" x2="375" y2="30" stroke="url(#e)" strokeWidth="8" />
-        <line x1="260" y1="18" x2="260" y2="42" stroke="#000" strokeWidth="1" />
-        <text y="10" x="260" textAnchor="middle">2,000 likes</text>
+        <line x1="${x}" y1="18" x2="${x}" y2="42" stroke="#000" strokeWidth="1" />
+        <text y="10" x="${x}" textAnchor="middle">${d.likes_count} likes</text>
       </svg>
       <img src="${d.url}" alt="featured image" />
     `;
