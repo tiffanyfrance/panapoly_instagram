@@ -18,9 +18,9 @@ const DATA_URL = 'https://raw.githubusercontent.com/tiffylou/panoply/master/data
 
 // Initial viewport settings
 const INITIAL_VIEW_STATE = {
-  longitude: -74.859,
-  latitude: 40.4599,
-  zoom: 5,
+  longitude: -15.204279623,
+  latitude: 64.250074554,
+  zoom: 6.5,
   pitch: 0,
   bearing: 0
 };
@@ -38,7 +38,7 @@ class App extends React.Component {
       new IconLayer({
         id: 'grid',
         data,
-        iconAtlas: 'square.png',
+        iconAtlas: 'square1.png',
         iconMapping: ICON_MAPPING,
         getIcon: d => 'marker',
         sizeScale: 2,
@@ -73,7 +73,7 @@ class App extends React.Component {
         {baseMap && (
           <StaticMap
             reuseMaps
-            mapStyle="mapbox://styles/mapbox/dark-v9"
+            mapStyle="mapbox://styles/mapbox/light-v9"
             preventStyleDiffing={true}
             mapboxApiAccessToken={MAPBOX_TOKEN}
           />
@@ -100,7 +100,7 @@ function setTooltip(info, x, y) {
     $('#tooltip #date').html(moment(d.created_time, "YYYY-MM-DD HH:mm:ss").format("MMMM D, YYYY"));
     // $('#tooltip #location').html(`long, lat: ${d.latitude}, ${d.longitude}`);
     $('#tooltip #text').html(d.text);
-    $('#tooltip #see-more').html(`<a id="see-more" href="${d.link}" target="_blank" rel="noopener noreferrer">see more...</a>`);
+    $('#tooltip #text').append(`... <a id="see-more" href="${d.link}" target="_blank" rel="noopener noreferrer">[see more]</a>`);
     $('#tooltip #image-holder').html(`<img src="${d.url}" alt="featured image" />`);
     $('#tooltip svg #vert-line').attr('x1', x);
     $('#tooltip svg #vert-line').attr('x2', x);

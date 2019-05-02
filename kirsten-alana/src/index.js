@@ -9,14 +9,13 @@ ReactDOM.render(<div><App /><div id="tooltip">
   <a id="close" href=""><div style={{float: 'right', fontSize: '2em'}}>&#10005;</div></a>
   <h1><img src={logo} alt="instagram logo" />Kirsten Alana Instagram Stories</h1>
   <h2>Data Vizualization by Tiffany France</h2>
-  <p id="date">April 1, 2019</p>
+  <p id="date">April 30, 2019</p>
   <p id="text">
     This site tracks instagram posts using longitude and latitude for Kirsten Alana's instagram account. <a href="https://www.instagram.com/kirstenalana/">Kirsten Alana</a> is a top travel influencer whose mission is to be a "resource for those planning travel".
     <br /><br />The data is gathered using <a href="https://panoply.io/">Panoply</a>, a "fully end-to-end cloud data warehouse and management service." The code uses React with DeckGL, which is built using MapboxGL.
-    <br /><br />Use this map like you would use any slippy map: zoom in and out with the mouse; pan by clicking and dragging; hovering/clicking on the red triangles will show the corresponding post. Some images are hidden if they use the same coordinates.
+    <br /><br />Use this map like you would use any slippy map: zoom in and out with the mouse; pan by clicking and dragging; hovering/clicking on the red triangles will show the corresponding post. To do: some images are hidden if they use the same coordinates.
     <br /><br />Questions about the design or development? <a href="http://tiffanyfrance.com">Get in touch</a>!
   </p>
-  <p id="see-more"></p>
   <svg xmlns="http://www.w3.org/2000/svg" version="1">
     <defs>
       <linearGradient id="e" x1="0" y1="10" x2="460" y2="10" gradientUnits="userSpaceOnUse">

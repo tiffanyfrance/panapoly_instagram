@@ -31,7 +31,7 @@ code {
   width: 400px;
   right: 0;
   top: 0;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 #close {
@@ -55,10 +55,18 @@ code {
   margin-right: 10px;
 }
 
+/* #tooltip h2 {
+  height: 18px;
+} */
+
 #tooltip p {
   font-size: 12px;
   line-height: 1.5;
 }
+
+/* #tooltip p#text {
+  height: 72px;
+} */
 
 #tooltip img {
   max-width: 100%;
