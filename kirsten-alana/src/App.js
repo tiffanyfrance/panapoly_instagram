@@ -18,9 +18,9 @@ const DATA_URL = 'https://raw.githubusercontent.com/tiffylou/panoply/master/data
 
 // Initial viewport settings
 const INITIAL_VIEW_STATE = {
-  longitude: -15.204279623,
-  latitude: 64.250074554,
-  zoom: 6.5,
+  longitude: -0.1061889,
+  latitude: 51.5082649,
+  zoom: 13,
   pitch: 0,
   bearing: 0
 };
